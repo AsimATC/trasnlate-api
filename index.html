@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trasnlate</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script type="text/javascript">
-        jQuery('.switcher .selected').click(function() {
-            if (!(jQuery('.switcher .option').is(':visible'))) {
-                jQuery('.switcher .option').stop(true, true).delay(100).slideDown(500);
-                jQuery('.switcher .selected a').toggleClass('open')
-            }
-        });
-        jQuery('.switcher .option').bind('mousewheel', function(e) {
-            var options = jQuery('.switcher .option');
-            if (options.is(':visible')) options.scrollTop(options.scrollTop() - e.originalEvent.wheelDelta);
-            return false;
-        });
-        jQuery('body').not('.switcher').mousedown(function(e) {
-            if (jQuery('.switcher .option').is(':visible') && e.target != jQuery('.switcher .option').get(0)) {
-                jQuery('.switcher .option').stop(true, true).delay(100).slideUp(500);
-                jQuery('.switcher .selected a').toggleClass('open')
-            }
-        });
-    </script>
 
     <li style="display:none" id="google_translate_element2"></li>
     <script type="text/javascript">
@@ -37,7 +17,7 @@
             }, 'google_translate_element2');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
 
 
     <script type="text/javascript">
@@ -56,7 +36,7 @@
                     evt.initEvent(event, true, true);
                     element.dispatchEvent(evt)
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
 
         function doGTranslate(lang_pair, code) {
@@ -69,7 +49,7 @@
             for (var i = 0; i < sel.length; i++)
                 if (sel[i].className == 'goog-te-combo') teCombo = sel[i];
             if (document.getElementById('google_translate_element2') == null || document.getElementById('google_translate_element2').innerHTML.length == 0 || teCombo.length == 0 || teCombo.innerHTML.length == 0) {
-                setTimeout(function() {
+                setTimeout(function () {
                     doGTranslate(lang_pair)
                 }, 500)
             } else {
@@ -86,23 +66,35 @@
             window.location = "https://www.tonyukukdemo.com/sarinacam/dil.php?kodu=" + dil;
         }
 
-        if (GTranslateGetCurrentLang() != null) jQuery(document).ready(function() {
+        if (GTranslateGetCurrentLang() != null) jQuery(document).ready(function () {
             jQuery('div.switcher div.selected a').html(jQuery('div.switcher div.option').find('img[alt="' + GTranslateGetCurrentLang() + '"]').parent().html());
         });
     </script>
-<link rel="stylesheet" href="style.css">
+        <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
     <ul class="list">
-        <li> <a href="#" onclick="doGTranslate('tr|en');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="English">English</a></li>
-        <li> <a href="#" onclick="doGTranslate('tr|de');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Deutsch">Deutsch</a></li>
-        <li> <a href="#" onclick="doGTranslate('tr|ar');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Arabic">Arabic</a></li>
-        <li> <a href="#" onclick="doGTranslate('tr|tr');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Türkçe">Türkçe</a></li>
+        <li> <a href="#"
+                onclick="doGTranslate('tr|en');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;"
+                title="English">English</a></li>
+        <li> <a href="#"
+                onclick="doGTranslate('tr|de');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;"
+                title="Deutsch">Deutsch</a></li>
+        <li> <a href="#"
+                onclick="doGTranslate('tr|ar');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;"
+                title="Arabic">Arabic</a></li>
+        <li> <a href="#"
+                onclick="doGTranslate('tr|tr');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;"
+                title="Türkçe">Türkçe</a></li>
     </ul>
 
     <h1>Merhaba !</h1>
-    
+
 </body>
+
 </html>
